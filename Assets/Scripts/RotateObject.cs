@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveObject : MonoBehaviour
+public class RotateObject : MonoBehaviour
 {
     [SerializeField] float moveSpeed;
     [SerializeField] Vector3 moveDirection;
@@ -36,12 +36,12 @@ public class MoveObject : MonoBehaviour
     
     void OnTriggerEnter(Collider other)
     {
-        gameObject.transform.Translate(moveDirection * moveSpeed);
+        gameObject.transform.Rotate(moveDirection * moveSpeed);
     }
 
     void OnTriggerExit(Collider other)
     {
-        gameObject.transform.Translate(-moveDirection * moveSpeed);
+        gameObject.transform.Rotate(-moveDirection * moveSpeed);
     }
 
 
@@ -56,3 +56,4 @@ public class MoveObject : MonoBehaviour
         return Vector3.Distance(gameObject.transform.position, startingLocation);
     }
 }
+
